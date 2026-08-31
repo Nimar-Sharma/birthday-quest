@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Ultimate Birthday Quest: Tiddi, Daddu & The Missing Phone Cooler 🎮🎂</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700;800;900&family=Bungee&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- Top Navigation -->
+  <header class="top-navbar">
+    <div class="brand-title" onclick="app.showScreen('landing')" style="cursor: pointer;">
+      <span>🎂 BDAY QUEST 2026</span>
+      <span class="brand-badge">GENSHIN EDITION</span>
+    </div>
+    <div class="nav-actions">
+      <button class="solid-btn btn-yellow" onclick="sound.toggleSound()" id="sound-toggle-btn" title="Toggle Sound FX">
+        <span id="sound-icon">🔊</span> FX
+      </button>
+      <button class="solid-btn btn-cyan" onclick="app.openLeaderboard('default')">
+        🏆 LEADERBOARD
+      </button>
+      <button class="solid-btn btn-pink" onclick="app.openCreatorAuthModal()">
+        👑 BIRTHDAY GIRL
+      </button>
+    </div>
+  </header>
+
+  <main class="main-container">
+    
+    <!-- =========================================================
+         SCREEN 1: LANDING HUB (CLEAN & PUNCHY)
+         ========================================================= -->
+    <section id="screen-landing" class="screen-section active">
+      <div class="hero-card" style="padding: 28px 20px;">
+        <div class="hero-tags">
+          <span class="hero-tag tag-tiddi">🦗 TIDDI</span>
+          <span class="hero-tag tag-daddu">🐸 DADDU</span>
+          <span class="hero-tag tag-badash">😈 BADASH</span>
+        </div>
+
+        <h1 class="hero-title" style="margin: 10px 0 8px 0; font-size: 2.2rem;">ANOTHER YEAR WITHOUT A PHONE COOLER! 🔥</h1>
+        
+        <p class="hero-subtitle" style="margin-bottom: 20px; font-size: 1.05rem;">
+          0 Primogems, flat DEF artifacts, 450°C battery... and still no phone cooler. Happy Birthday! 🎂
+        </p>
+
+        <div class="two-panels-grid">
+          <!-- Panel 1: For Ash -->
+          <div class="panel-card panel-ash">
+            <div>
+              <div class="panel-header">
+                <span class="hero-tag tag-badash">👑 VIP ACCESS</span>
+              </div>
+              <h2 class="panel-title">FOR ASH (TIDDI / DADDU) 🐸✨</h2>
+              <p class="panel-desc">
+                Play the 5-Stage Story Quest, cool down your fiery phone, blow out the cake, and create custom quizzes to roast your friends!
+              </p>
+            </div>
+            <div class="panel-actions">
+              <button class="solid-btn btn-pink" onclick="storyQuest.start()">
+                🚀 PLAY BIRTHDAY QUEST
+              </button>
+              <button class="solid-btn btn-lime" onclick="app.openCreatorAuthModal()">
+                ✍️ CREATE QUIZ FOR FRIENDS
+              </button>
+            </div>
+          </div>
+
+          <!-- Panel 2: For Friends -->
+          <div class="panel-card panel-friends">
+            <div>
+              <div class="panel-header">
+                <span class="hero-tag tag-genshin">⚔️ ARENA</span>
+              </div>
+              <h2 class="panel-title">FOR HER FRIENDS 🎮🏆</h2>
+              <p class="panel-desc">
+                Play the custom questionnaire created by Ash, answer her questions, and claim your spot on her leaderboard!
+              </p>
+            </div>
+            <div class="panel-actions">
+              <button class="solid-btn btn-cyan" onclick="quizPlayer.openFriendQuizPicker()">
+                🎯 PLAY ASH'S QUIZ
+              </button>
+              <button class="solid-btn btn-yellow" onclick="quizPlayer.openLatestLeaderboard()">
+                🏆 VIEW LIVE LEADERBOARD
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SCREEN 2: STORY QUEST (INTERACTIVE PUZZLES & MINI GAMES)
+         ========================================================= -->
+    <section id="screen-story" class="screen-section">
+      <div class="puzzle-card">
+        <div class="puzzle-header">
+          <span class="stage-pill" id="story-stage-indicator">STAGE 1 / 5</span>
+          <button class="solid-btn btn-white" style="padding: 6px 12px; font-size: 0.8rem;" onclick="app.showScreen('landing')">
+            ✕ EXIT QUEST
+          </button>
+        </div>
+
+        <h2 class="hero-title" id="story-title" style="font-size: 1.8rem; text-align: left; margin-bottom: 8px;">
+          Identity Verification Protocol
+        </h2>
+        <p id="story-description" style="font-weight: 700; color: #333; margin-bottom: 16px;">
+          Security Alert: Confirm your legal alter-egos to proceed.
+        </p>
+
+        <!-- Dynamic Meme Container -->
+        <div class="meme-box" id="story-meme-box">
+          <img id="story-meme-img" class="meme-img" src="" alt="Meme">
+          <div class="meme-caption" id="story-meme-caption">Cat is analyzing your choices...</div>
+        </div>
+
+        <!-- Dynamic Interactive Area (MCQ / Mini-Game / Cake) -->
+        <div id="story-interactive-area"></div>
+
+        <!-- Toast Feedback -->
+        <div id="story-feedback" style="display:none; margin-top: 16px; padding: 14px; border: 3px solid #111; border-radius: 10px; font-weight: 800;"></div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SCREEN 3: FRIEND QUIZ PLAYER
+         ========================================================= -->
+    <section id="screen-quiz" class="screen-section">
+      <div class="puzzle-card">
+        <div class="puzzle-header">
+          <span class="stage-pill" id="quiz-progress-pill">QUESTION 1 / 5</span>
+          <div style="font-weight: 900; font-size: 1.1rem; display: flex; align-items: center; gap: 8px;">
+            <span>⏱️</span> <span id="quiz-timer-display">00:00</span>
+          </div>
+        </div>
+
+        <h2 class="hero-title" id="quiz-question-text" style="font-size: 1.6rem; text-align: left; margin-bottom: 12px;">
+          Loading question...
+        </h2>
+
+        <div class="meme-box" id="quiz-meme-box">
+          <img id="quiz-meme-img" class="meme-img" src="" alt="Quiz Meme">
+          <div class="meme-caption" id="quiz-meme-caption">Think carefully...</div>
+        </div>
+
+        <div class="options-grid" id="quiz-options-container">
+          <!-- Dynamic MCQ Option buttons -->
+        </div>
+
+        <div id="quiz-feedback-box" style="display: none; margin-top: 14px; padding: 14px; border: var(--border-thick); border-radius: 10px; font-weight: 800;"></div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SCREEN 4: QUIZ RESULT & SUBMISSION
+         ========================================================= -->
+    <section id="screen-result" class="screen-section">
+      <div class="hero-card" style="text-align: center;">
+        <div style="font-size: 4rem; margin-bottom: 10px;" id="result-emoji">🎉</div>
+        <h2 class="hero-title" id="result-title">ROAST QUIZ COMPLETE!</h2>
+        <p class="hero-subtitle" id="result-subtitle">Here is how you scored:</p>
+
+        <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin: 20px 0;">
+          <div style="background-color: var(--bg-yellow); border: var(--border-thick); padding: 16px 24px; border-radius: 12px; box-shadow: var(--shadow-main);">
+            <div style="font-size: 0.85rem; font-weight: 900;">TOTAL SCORE</div>
+            <div style="font-size: 2.5rem; font-weight: 900;" id="result-score-val">0</div>
+          </div>
+          <div style="background-color: var(--bg-cyan); border: var(--border-thick); padding: 16px 24px; border-radius: 12px; box-shadow: var(--shadow-main);">
+            <div style="font-size: 0.85rem; font-weight: 900;">ACCURACY</div>
+            <div style="font-size: 2.5rem; font-weight: 900;" id="result-accuracy-val">0/5</div>
+          </div>
+          <div style="background-color: var(--bg-pink); color: #fff; border: var(--border-thick); padding: 16px 24px; border-radius: 12px; box-shadow: var(--shadow-main);">
+            <div style="font-size: 0.85rem; font-weight: 900;">LEADERBOARD RANK</div>
+            <div style="font-size: 2.5rem; font-weight: 900;" id="result-rank-val">#1</div>
+          </div>
+        </div>
+
+        <div class="meme-box" style="max-width: 500px; margin: 20px auto;">
+          <img id="result-meme-img" class="meme-img" src="" alt="Result Meme">
+          <div class="meme-caption" id="result-meme-caption">Legendary Performance!</div>
+        </div>
+
+        <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-top: 24px;">
+          <button class="solid-btn btn-yellow" onclick="app.openLeaderboard(quizPlayer.currentQuizId)">
+            VIEW LIVE LEADERBOARD 🏆
+          </button>
+          <button class="solid-btn btn-white" onclick="app.showScreen('landing')">
+            BACK TO HOME 🏠
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================
+       MODAL 1: BIRTHDAY GIRL SECRET PASSCODE AUTH
+       ========================================================= -->
+  <div id="modal-creator-auth" class="modal-overlay">
+    <div class="modal-card">
+      <button class="modal-close" onclick="app.closeModal('modal-creator-auth')">✕</button>
+      <div style="text-align: center; margin-bottom: 20px;">
+        <span style="font-size: 3rem;">👑🔒</span>
+        <h2 style="font-size: 1.8rem; font-weight: 900; margin-top: 8px;">Birthday Girl Verification</h2>
+        <p style="font-weight: 700; color: #444; margin-top: 6px;">
+          Only the Birthday Girl (Tiddi / Daddu / Badash) knows the secret passcode.
+        </p>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Security Question: What's the Birthday Girl Code?</label>
+        <input type="text" id="auth-secret-input" class="solid-input" placeholder="Type the secret answer..." autocomplete="off">
+        <p style="font-size: 0.8rem; font-weight: 700; color: #666; margin-top: 6px;">
+          (Hint: Who is smart? 😉)
+        </p>
+      </div>
+
+      <div id="auth-error-msg" style="display:none; background-color: var(--bg-red); color: #fff; padding: 10px; border-radius: 8px; font-weight: 800; margin-bottom: 16px; border: 2px solid #111;"></div>
+
+      <button class="solid-btn btn-pink" style="width: 100%;" onclick="creatorStudio.verifyCode()">
+        UNLOCK CREATOR STUDIO 🔓
+      </button>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       MODAL 2: BIRTHDAY GIRL CUSTOM QUESTIONNAIRE STUDIO
+       ========================================================= -->
+  <div id="modal-creator-studio" class="modal-overlay">
+    <div class="modal-card" style="max-width: 720px;">
+      <button class="modal-close" onclick="app.closeModal('modal-creator-studio')">✕</button>
+      
+      <div style="margin-bottom: 20px;">
+        <span class="hero-tag tag-badash">👑 CREATOR STUDIO</span>
+        <h2 style="font-size: 1.8rem; font-weight: 900; margin-top: 8px;">Craft Your Custom Roast Quiz</h2>
+        <p style="font-weight: 700; color: #444;">
+          Write your custom questions to roast your friends, generate a link, and watch them fail on your leaderboard!
+        </p>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Quiz Title</label>
+        <input type="text" id="custom-quiz-title" class="solid-input" value="How Well Do You Know Tiddi/Daddu? 🐸✨">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Your Name / Host Title</label>
+        <input type="text" id="custom-quiz-creator" class="solid-input" value="The Birthday Queen">
+      </div>
+
+      <hr style="border: 2px solid #111; margin: 20px 0;">
+
+      <!-- Custom Questions List -->
+      <div id="custom-questions-container">
+        <!-- Question items rendered dynamically -->
+      </div>
+
+      <button class="solid-btn btn-yellow" style="width: 100%; margin: 12px 0;" onclick="creatorStudio.addQuestion()">
+        + ADD ANOTHER QUESTION
+      </button>
+
+      <button class="solid-btn btn-lime" style="width: 100%; font-size: 1.1rem; padding: 14px;" onclick="creatorStudio.publishQuiz()">
+        🚀 PUBLISH QUIZ & GET SHARE LINK
+      </button>
+
+      <!-- Share Link Box -->
+      <div id="custom-share-box" style="display:none; margin-top: 20px; padding: 16px; background-color: var(--bg-yellow); border: var(--border-thick); border-radius: 10px;">
+        <h4 style="font-weight: 900; margin-bottom: 6px;">🎉 Quiz Published! Share With Your Friends:</h4>
+        <input type="text" id="custom-share-url" class="solid-input" readonly onclick="this.select()">
+        <button class="solid-btn btn-pink" style="margin-top: 10px; width: 100%;" onclick="creatorStudio.copyShareUrl()">
+          📋 COPY QUIZ LINK
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       MODAL 3: ANIMATED EMOJI LEADERBOARD
+       ========================================================= -->
+  <div id="modal-leaderboard" class="modal-overlay">
+    <div class="modal-card" style="max-width: 650px;">
+      <button class="modal-close" onclick="app.closeModal('modal-leaderboard')">✕</button>
+      
+      <div style="text-align: center; margin-bottom: 16px;">
+        <span style="font-size: 3rem;">🏆✨</span>
+        <h2 style="font-size: 1.8rem; font-weight: 900;" id="leaderboard-modal-title">Live Meme Leaderboard</h2>
+        <p style="font-weight: 700; color: #444;">
+          The Official Wall of Fame (and Wall of Phone Coolers)
+        </p>
+      </div>
+
+      <div class="leaderboard-list" id="leaderboard-items-container">
+        <!-- Dynamic Leaderboard Items -->
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       MODAL 4: NAME ENTRY FOR QUIZ PLAYER
+       ========================================================= -->
+  <div id="modal-name-entry" class="modal-overlay">
+    <div class="modal-card" style="max-width: 460px;">
+      <button class="modal-close" onclick="app.closeModal('modal-name-entry')">✕</button>
+      <div style="text-align: center; margin-bottom: 16px;">
+        <span style="font-size: 3.2rem;">📱🔥🗿</span>
+        <h2 style="font-size: 1.55rem; font-weight: 900; margin-top: 6px;">WHO DARES FACE TIDDI AKA DADDU?</h2>
+        <p style="font-weight: 700; color: #444; margin-top: 4px;">
+          Enter your name for the live leaderboard:
+        </p>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">WHAT'S YOUR NAME?</label>
+        <input type="text" id="player-name-input" class="solid-input" placeholder="Enter your real name..." maxlength="25">
+      </div>
+
+      <button class="solid-btn btn-pink" style="width: 100%; font-size: 1.15rem; padding: 14px;" onclick="quizPlayer.startWithPlayerName()">
+        START QUIZ 💥
+      </button>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       MODAL 5: FRIEND QUIZ PICKER / ENTER CODE
+       ========================================================= -->
+  <div id="modal-quiz-picker" class="modal-overlay">
+    <div class="modal-card" style="max-width: 500px;">
+      <button class="modal-close" onclick="app.closeModal('modal-quiz-picker')">✕</button>
+      <div style="text-align: center; margin-bottom: 16px;">
+        <span style="font-size: 3rem;">📝👑</span>
+        <h2 style="font-size: 1.55rem; font-weight: 900; margin-top: 6px;">Ash's Custom Quizzes</h2>
+        <p style="font-weight: 700; color: #444; margin-top: 4px;">
+          Only custom quizzes created by the Birthday Queen herself are hosted here.
+        </p>
+      </div>
+
+      <div id="available-quizzes-container" style="margin-bottom: 16px;">
+        <!-- Dynamically loaded list of quizzes created by Ash -->
+      </div>
+
+      <div style="border-top: 2px dashed #111; padding-top: 14px; margin-top: 14px;">
+        <label class="form-label" style="font-size: 0.85rem;">OR ENTER QUIZ CODE / INVITE LINK:</label>
+        <div style="display: flex; gap: 8px;">
+          <input type="text" id="direct-quiz-code-input" class="solid-input" placeholder="e.g. bday-abc123" style="padding: 10px;">
+          <button class="solid-btn btn-pink" style="padding: 10px 16px; flex-shrink: 0;" onclick="quizPlayer.playDirectCode()">
+            PLAY 🚀
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
