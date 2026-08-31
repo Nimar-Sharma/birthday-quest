@@ -1047,7 +1047,14 @@ const creatorStudio = {
         confetti.explode();
         const shareBox = document.getElementById('custom-share-box');
         const shareInput = document.getElementById('custom-share-url');
-        const fullUrl = `${window.location.origin}/?quiz=${data.quizId}`;
+        // Use live Vercel domain by default so shared links always work for friends everywhere
+        const currentOrigin = window.location.origin;
+        const liveDomain = 'https://birthday-quest-4u.vercel.app';
+        const baseDomain = currentOrigin.includes('localhost') || currentOrigin.includes('127.0.0.1')
+          ? liveDomain
+          : currentOrigin;
+
+        const fullUrl = `${baseDomain}/?quiz=${data.quizId}`;
         if (shareInput) shareInput.value = fullUrl;
         if (shareBox) shareBox.style.display = 'block';
       } else {
@@ -1062,9 +1069,18 @@ const creatorStudio = {
     const input = document.getElementById('custom-share-url');
     if (input) {
       input.select();
-      navigator.clipboard.writeText(input.value);
+      input.setSelectionRange(0, 99999);
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(input.value);
+        } else {
+          document.execCommand('copy');
+        }
+      } catch (e) {
+        document.execCommand('copy');
+      }
       sound.playPop();
-      alert('Quiz link copied to clipboard! Share it with your friends! 🚀');
+      alert('🎉 Quiz link copied to clipboard! Share it with your friends! 🚀\n\n' + input.value);
     }
   }
 };

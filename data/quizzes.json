@@ -1,22 +1,22 @@
 {
   "ash-quiz": {
     "id": "ash-quiz",
-    "title": "How Well Do You Know Ash (Tiddi/Daddu)? 🐸✨",
-    "creator": "Ash (Birthday Queen)",
-    "createdAt": "2026-08-31T16:15:00.000Z",
+    "title": "How Well Do You Know Tiddi/Daddu? 🐸✨",
+    "creator": "Nimar",
+    "createdAt": "2026-08-31T16:31:39.555Z",
     "questions": [
       {
         "id": "q_1",
-        "text": "What is Ash's biggest certified red flag?",
+        "text": "hello 12e4",
         "options": [
-          "Losing 50/50 in Genshin to Qiqi",
-          "Playing on a 500°C phone without a phone cooler",
-          "Saying 'just one more minute' for 4 hours",
+          "1",
+          "2",
+          "3",
           "All of the above"
         ],
         "correctIndex": 3,
-        "meme": "cat_thinking",
-        "roast": "Facts only: All of the above!"
+        "meme": "crying_kid",
+        "roast": "hahahahahah"
       }
     ]
   }
