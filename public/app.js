@@ -1,52 +1,52 @@
 /* =========================================================
-   MEME DATA & EMBEDDED GRAPHICS (100% RELIABLE)
+   MEME DATA & EMBEDDED GRAPHICS (100% RELIABLE & NEVER FAILS)
    ========================================================= */
 
 const MEMES = {
   cat_thinking: {
-    title: "Cat Analyzing...",
-    url: "https://media.giphy.com/media/unQ3IJU2RG7DO/giphy.gif",
-    fallbackSvg: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="360" height="240" viewBox="0 0 360 240"><rect width="360" height="240" fill="%23111"/><text x="180" y="110" font-size="70" text-anchor="middle">🐱🤔</text><text x="180" y="175" font-size="22" font-weight="900" text-anchor="middle" fill="%23FFE600">HMMM...</text><text x="180" y="210" font-size="14" font-weight="700" text-anchor="middle" fill="%23FFFFFF">ANALYZING CHOICES</text></svg>`
+    title: "Cat Analyzing Deeply...",
+    url: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="360" height="240" viewBox="0 0 360 240"><rect width="360" height="240" fill="%23111111"/><rect x="15" y="15" width="330" height="210" fill="%23FFE600" stroke="%23FFFFFF" stroke-width="4" rx="12"/><text x="180" y="105" font-size="64" text-anchor="middle">🐱🤔</text><text x="180" y="160" font-size="22" font-weight="900" font-family="sans-serif" text-anchor="middle" fill="%23111111">HMM... THINK CAREFULLY</text><text x="180" y="195" font-size="14" font-weight="800" font-family="sans-serif" text-anchor="middle" fill="%23FF1493">ANALYZING ASH'S LOGIC</text></svg>`,
+    fallbackSvg: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="360" height="240" viewBox="0 0 360 240"><rect width="360" height="240" fill="%23111"/><text x="180" y="120" font-size="60" text-anchor="middle">🐱🤔</text></svg>`
   },
   ralph_waving: {
-    title: "Ralph Wiggum Waving",
-    url: "https://media.giphy.com/media/55itGuoAJiGXe/giphy.gif",
-    fallbackSvg: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="360" height="240" viewBox="0 0 360 240"><rect width="360" height="240" fill="%23111"/><text x="180" y="110" font-size="70" text-anchor="middle">👦👋</text><text x="180" y="175" font-size="22" font-weight="900" text-anchor="middle" fill="%2300F0FF">(CHUCKLES)</text><text x="180" y="210" font-size="14" font-weight="700" text-anchor="middle" fill="%23FFFFFF">I'M IN DANGER!</text></svg>`
+    title: "Is She Badash Herself?!",
+    url: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="360" height="240" viewBox="0 0 360 240"><rect width="360" height="240" fill="%23111111"/><rect x="15" y="15" width="330" height="210" fill="%23FF1493" stroke="%23FFFFFF" stroke-width="4" rx="12"/><text x="180" y="105" font-size="64" text-anchor="middle">👑🕶️✨</text><text x="180" y="155" font-size="20" font-weight="900" font-family="sans-serif" text-anchor="middle" fill="%23FFFFFF">IS SHE BADASH HERSELF?!</text><text x="180" y="190" font-size="14" font-weight="800" font-family="sans-serif" text-anchor="middle" fill="%23FFE600">100% CERTIFIED ACCURACY</text></svg>`,
+    fallbackSvg: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="360" height="240" viewBox="0 0 360 240"><rect width="360" height="240" fill="%23111"/><text x="180" y="120" font-size="60" text-anchor="middle">👑🕶️</text></svg>`
   },
   kurt_stare: {
-    title: "Kurt Angle 1000-Yard Stare",
-    url: "https://media.giphy.com/media/WbDhQjgBrpUuk/giphy.gif",
-    fallbackSvg: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="360" height="240" viewBox="0 0 360 240"><rect width="360" height="240" fill="%23111"/><text x="180" y="110" font-size="70" text-anchor="middle">👁️👄👁️</text><text x="180" y="175" font-size="22" font-weight="900" text-anchor="middle" fill="%23FF1493">UNBLINKING STARE</text><text x="180" y="210" font-size="14" font-weight="700" text-anchor="middle" fill="%23FFFFFF">JUDGING YOUR EXISTENCE</text></svg>`
+    title: "Kurt Angle Unblinking Stare",
+    url: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="360" height="240" viewBox="0 0 360 240"><rect width="360" height="240" fill="%23111111"/><rect x="15" y="15" width="330" height="210" fill="%2300F0FF" stroke="%23111111" stroke-width="4" rx="12"/><text x="180" y="105" font-size="64" text-anchor="middle">👁️👄👁️</text><text x="180" y="155" font-size="20" font-weight="900" font-family="sans-serif" text-anchor="middle" fill="%23111111">UNBLINKING 1000-YARD STARE</text><text x="180" y="190" font-size="14" font-weight="800" font-family="sans-serif" text-anchor="middle" fill="%23FF1493">JUDGING YOUR ANSWER</text></svg>`,
+    fallbackSvg: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="360" height="240" viewBox="0 0 360 240"><rect width="360" height="240" fill="%23111"/><text x="180" y="120" font-size="60" text-anchor="middle">👁️👄👁️</text></svg>`
   },
   red_angry: {
-    title: "Red M&M Angry",
-    url: "https://media.giphy.com/media/3o7TKvxnUVN4NuLTcA/giphy.gif",
-    fallbackSvg: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="360" height="240" viewBox="0 0 360 240"><rect width="360" height="240" fill="%23FF2A2A"/><text x="180" y="110" font-size="70" text-anchor="middle">😡🔴</text><text x="180" y="175" font-size="22" font-weight="900" text-anchor="middle" fill="%23FFFFFF">PURE RAGE</text><text x="180" y="210" font-size="14" font-weight="700" text-anchor="middle" fill="%23FFFFFF">ACCESS DENIED!</text></svg>`
+    title: "ACCESS DENIED! Pure Rage",
+    url: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="360" height="240" viewBox="0 0 360 240"><rect width="360" height="240" fill="%23111111"/><rect x="15" y="15" width="330" height="210" fill="%23FF2A2A" stroke="%23FFFFFF" stroke-width="4" rx="12"/><text x="180" y="105" font-size="64" text-anchor="middle">😡🔴💥</text><text x="180" y="155" font-size="22" font-weight="900" font-family="sans-serif" text-anchor="middle" fill="%23FFFFFF">❌ ACCESS DENIED!</text><text x="180" y="190" font-size="14" font-weight="800" font-family="sans-serif" text-anchor="middle" fill="%23FFE600">YOU ARE 0% NORMAL!</text></svg>`,
+    fallbackSvg: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="360" height="240" viewBox="0 0 360 240"><rect width="360" height="240" fill="%23FF2A2A"/><text x="180" y="120" font-size="60" text-anchor="middle">😡</text></svg>`
   },
   cat_wide: {
-    title: "Wide Eyed Cat",
-    url: "https://media.giphy.com/media/mlvseq9yvZhba/giphy.gif",
-    fallbackSvg: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="360" height="240" viewBox="0 0 360 240"><rect width="360" height="240" fill="%23111"/><text x="180" y="110" font-size="70" text-anchor="middle">😳🐱</text><text x="180" y="175" font-size="22" font-weight="900" text-anchor="middle" fill="%23FFE600">SHOCK & DISBELIEF</text><text x="180" y="210" font-size="14" font-weight="700" text-anchor="middle" fill="%23FFFFFF">LOST 50/50 AGAIN</text></svg>`
+    title: "Wide Eyed Shock",
+    url: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="360" height="240" viewBox="0 0 360 240"><rect width="360" height="240" fill="%23111111"/><rect x="15" y="15" width="330" height="210" fill="%2300FF66" stroke="%23111111" stroke-width="4" rx="12"/><text x="180" y="105" font-size="64" text-anchor="middle">😳🐸</text><text x="180" y="155" font-size="20" font-weight="900" font-family="sans-serif" text-anchor="middle" fill="%23111111">SHOCK & DISBELIEF</text><text x="180" y="190" font-size="14" font-weight="800" font-family="sans-serif" text-anchor="middle" fill="%23FF5500">DADDU IS WATCHING YOU</text></svg>`,
+    fallbackSvg: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="360" height="240" viewBox="0 0 360 240"><rect width="360" height="240" fill="%23111"/><text x="180" y="120" font-size="60" text-anchor="middle">😳</text></svg>`
   },
   pigeon_wall: {
-    title: "Pigeon Banging Wall",
-    url: "https://media.giphy.com/media/l41lFw057lAJQMwg0/giphy.gif",
-    fallbackSvg: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="360" height="240" viewBox="0 0 360 240"><rect width="360" height="240" fill="%23222"/><text x="180" y="110" font-size="70" text-anchor="middle">🐦🧱</text><text x="180" y="175" font-size="22" font-weight="900" text-anchor="middle" fill="%2300FF66">HEADBANGING WALL</text><text x="180" y="210" font-size="14" font-weight="700" text-anchor="middle" fill="%23FFFFFF">PHONE HEATING TO 500°C</text></svg>`
+    title: "Molten Phone Alert",
+    url: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="360" height="240" viewBox="0 0 360 240"><rect width="360" height="240" fill="%23111111"/><rect x="15" y="15" width="330" height="210" fill="%23FF5500" stroke="%23FFFFFF" stroke-width="4" rx="12"/><text x="180" y="105" font-size="64" text-anchor="middle">📱🔥🌋</text><text x="180" y="155" font-size="20" font-weight="900" font-family="sans-serif" text-anchor="middle" fill="%23FFFFFF">PHONE HEATING TO 450°C</text><text x="180" y="190" font-size="14" font-weight="800" font-family="sans-serif" text-anchor="middle" fill="%23FFE600">STILL NO COOLER IN SIGHT</text></svg>`,
+    fallbackSvg: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="360" height="240" viewBox="0 0 360 240"><rect width="360" height="240" fill="%23FF5500"/><text x="180" y="120" font-size="60" text-anchor="middle">🔥</text></svg>`
   },
   bobby_bike: {
     title: "Bobby Hill on Bike",
-    url: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="360" height="240" viewBox="0 0 360 240"><rect width="360" height="240" fill="%23111"/><text x="180" y="105" font-size="65" text-anchor="middle">🚲🏃‍♂️💨</text><text x="180" y="165" font-size="20" font-weight="900" text-anchor="middle" fill="%23FFE600">PEDALING AWAY WITH COOLER</text><text x="180" y="200" font-size="14" font-weight="700" text-anchor="middle" fill="%23FFFFFF">CATCH HIM IF YOU CAN!</text></svg>`,
-    fallbackSvg: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="360" height="240" viewBox="0 0 360 240"><rect width="360" height="240" fill="%23111"/><text x="180" y="105" font-size="65" text-anchor="middle">🚲🏃‍♂️💨</text><text x="180" y="165" font-size="20" font-weight="900" text-anchor="middle" fill="%23FFE600">PEDALING AWAY WITH COOLER</text><text x="180" y="200" font-size="14" font-weight="700" text-anchor="middle" fill="%23FFFFFF">CATCH HIM IF YOU CAN!</text></svg>`
+    url: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="360" height="240" viewBox="0 0 360 240"><rect width="360" height="240" fill="%23111111"/><rect x="15" y="15" width="330" height="210" fill="%23FFE600" stroke="%23111111" stroke-width="4" rx="12"/><text x="180" y="105" font-size="64" text-anchor="middle">🚲🏃‍♂️💨</text><text x="180" y="155" font-size="18" font-weight="900" font-family="sans-serif" text-anchor="middle" fill="%23111111">PEDALING AWAY WITH COOLER</text><text x="180" y="190" font-size="14" font-weight="800" font-family="sans-serif" text-anchor="middle" fill="%23FF1493">CATCH IT IF YOU CAN!</text></svg>`,
+    fallbackSvg: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="360" height="240" viewBox="0 0 360 240"><rect width="360" height="240" fill="%23111"/><text x="180" y="120" font-size="60" text-anchor="middle">🚲</text></svg>`
   },
   minion_dark: {
-    title: "Minion in the Dark",
-    url: "https://media.giphy.com/media/13pbEUgBpPIxaOW40s/giphy.gif",
-    fallbackSvg: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="360" height="240" viewBox="0 0 360 240"><rect width="360" height="240" fill="%23000"/><text x="180" y="110" font-size="70" text-anchor="middle">🟡👀</text><text x="180" y="175" font-size="22" font-weight="900" text-anchor="middle" fill="%23FFE600">IN THE VOID</text><text x="180" y="210" font-size="14" font-weight="700" text-anchor="middle" fill="%23FFFFFF">WHERE IS THE PHONE COOLER?</text></svg>`
+    title: "In The Void Without A Cooler",
+    url: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="360" height="240" viewBox="0 0 360 240"><rect width="360" height="240" fill="%23111111"/><rect x="15" y="15" width="330" height="210" fill="%237928CA" stroke="%23FFFFFF" stroke-width="4" rx="12"/><text x="180" y="105" font-size="64" text-anchor="middle">🟡👀🕳️</text><text x="180" y="155" font-size="20" font-weight="900" font-family="sans-serif" text-anchor="middle" fill="%23FFFFFF">LOST IN THE VOID</text><text x="180" y="190" font-size="14" font-weight="800" font-family="sans-serif" text-anchor="middle" fill="%2300F0FF">WHERE IS THE PHONE COOLER?!</text></svg>`,
+    fallbackSvg: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="360" height="240" viewBox="0 0 360 240"><rect width="360" height="240" fill="%237928CA"/><text x="180" y="120" font-size="60" text-anchor="middle">👀</text></svg>`
   },
   crying_kid: {
-    title: "Nervous Smiling Kid",
-    url: "https://media.giphy.com/media/OPU6wzx8JrHna/giphy.gif",
-    fallbackSvg: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="360" height="240" viewBox="0 0 360 240"><rect width="360" height="240" fill="%23111"/><text x="180" y="110" font-size="70" text-anchor="middle">🥲😭</text><text x="180" y="175" font-size="22" font-weight="900" text-anchor="middle" fill="%23FF5500">INTERNAL SCREAMING</text><text x="180" y="210" font-size="14" font-weight="700" text-anchor="middle" fill="%23FFFFFF">0 PRIMOGEMS & MELTED BATTERY</text></svg>`
+    title: "Internal Screaming",
+    url: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="360" height="240" viewBox="0 0 360 240"><rect width="360" height="240" fill="%23111111"/><rect x="15" y="15" width="330" height="210" fill="%23FF1493" stroke="%23FFFFFF" stroke-width="4" rx="12"/><text x="180" y="105" font-size="64" text-anchor="middle">🥲💀😭</text><text x="180" y="155" font-size="20" font-weight="900" font-family="sans-serif" text-anchor="middle" fill="%23FFFFFF">INTERNAL SCREAMING</text><text x="180" y="190" font-size="14" font-weight="800" font-family="sans-serif" text-anchor="middle" fill="%23FFE600">ZERO PHONE COOLERS FOUND</text></svg>`,
+    fallbackSvg: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="360" height="240" viewBox="0 0 360 240"><rect width="360" height="240" fill="%23FF1493"/><text x="180" y="120" font-size="60" text-anchor="middle">😭</text></svg>`
   }
 };
 
@@ -883,7 +883,7 @@ const quizPlayer = {
       confetti.explode(window.innerWidth / 2, window.innerHeight / 2, 100);
       memeImg.src = getMemeImg('ralph_waving');
       attachImageFallback(memeImg, 'ralph_waving');
-      memeCaption.innerText = "100% GigaChad Accuracy! Certified Best Friend!";
+      memeCaption.innerText = "100% Accuracy! Is she Badash herself?! 👑🕶️";
     } else if (data.correctCount >= 2) {
       sound.playCorrect();
       memeImg.src = getMemeImg('cat_wide');
@@ -893,7 +893,7 @@ const quizPlayer = {
       sound.playWrong();
       memeImg.src = getMemeImg('crying_kid');
       attachImageFallback(memeImg, 'crying_kid');
-      memeCaption.innerText = "Failed 50/50. Crying and banging head against wall!";
+      memeCaption.innerText = "Do you even deserve to be Ash's friend?! 💀";
     }
   }
 };

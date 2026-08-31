@@ -294,24 +294,24 @@ app.get('/api/quizzes/:id/leaderboard', (req, res) => {
 
     if (index === 0) {
       rankTier = 'champion';
-      badge = '🕶️👑';
-      rankTitle = 'GigaChad Archon';
+      badge = '👑🕶️';
+      rankTitle = 'Is she Badash herself?!';
     } else if (index === 1) {
       rankTier = 'top2';
-      badge = '🔥🥈';
-      rankTitle = 'Pro Phone Cooler';
+      badge = '🐸🥈';
+      rankTitle = 'Certified Daddu';
     } else if (index === 2) {
       rankTier = 'top3';
-      badge = '🥉✨';
-      rankTitle = 'Certified Daddu';
+      badge = '🥉❄️';
+      rankTitle = 'Phone Cooler Specialist';
     } else if (index < 5) {
       rankTier = 'mid';
-      badge = '🐸';
-      rankTitle = 'Tiddi Enthusiast';
+      badge = '🦗';
+      rankTitle = 'Tiddi Apprentice';
     } else {
       rankTier = 'low';
       badge = '💀';
-      rankTitle = 'Flat DEF Victim';
+      rankTitle = 'Overheated Phone Victim';
     }
 
     return {
